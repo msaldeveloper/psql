@@ -1,0 +1,103 @@
+select 
+	first_name as nombre,
+	last_name as apellido
+	from customer;
+	
+select 
+	concat(first_name,' ',last_name) as nombre_completo,
+	email
+	from customer;
+
+select 
+	concat(first_name,' ',last_name) as "nombre completo",
+	email as "correo electronico"
+	from customer;
+	
+select 
+	first_name as "name",
+	last_name,
+	email
+from
+	customer
+order by 
+	last_name asc,
+	"name" desc;
+
+select 
+	*
+from 
+	address
+order by 
+	address2 
+	nulls last ;
+
+select
+	first_name as nombre,
+	last_name as apellido
+from 
+	customer
+order by
+	apellido asc;
+
+
+select
+	first_name as nombre,
+	last_name as apellido
+from 
+	customer
+order by
+	nombre asc,
+	apellido desc;
+
+
+select
+	first_name as nombre,
+	LENGTH(first_name) as "tamaño nombre",
+	last_name as apellido,
+	LENGTH(last_name) as "tamaño apellido"
+from 
+	customer
+order by
+	"tamaño apellido" asc,
+	apellido desc;
+
+select 
+	distinct on (first_name) first_name as nombre ,
+	last_name
+from customer
+order by nombre;
+
+
+select 
+	first_name,
+	last_name
+from customer
+where first_name ='Kelly' and last_name = 'Torres';
+
+
+select 
+	first_name,
+	last_name
+from customer
+where last_name in('Torres','Brown','Williams')
+
+
+select 
+	*
+from customer
+where customer_id between 10 and 15
+
+
+select 
+	*
+from customer
+where first_name like '%ic%'
+
+
+select 
+	*
+from customer
+where first_name not like '%ic%'
+
+
+
