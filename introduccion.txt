@@ -1,3 +1,5 @@
+# Select nos permite consultar datos
+
 select 
 	first_name as nombre,
 	last_name as apellido
@@ -12,7 +14,9 @@ select
 	concat(first_name,' ',last_name) as "nombre completo",
 	email as "correo electronico"
 	from customer;
-	
+
+#from le indicamos de que tabla tomara esos datos
+#order by nos regresa una consulta ordenada ya sea de manera ascendente (asc) o de manera descendente (desc)
 select 
 	first_name as "name",
 	last_name,
@@ -23,6 +27,7 @@ order by
 	last_name asc,
 	"name" desc;
 
+#select * nos trae todos las filas y columnas de una tabla
 select 
 	*
 from 
@@ -49,6 +54,8 @@ order by
 	nombre asc,
 	apellido desc;
 
+#LENGTH(columna) nos muestra el tamaño de el dato que esta en esa columna
+#as sirve para ponerle alias a las columnas,son efimeros durante la consulta
 
 select
 	first_name as nombre,
@@ -60,6 +67,8 @@ from
 order by
 	"tamaño apellido" asc,
 	apellido desc;
+#distinct compara los datos y regresa solo la primer coincidencia, en caso de que  haya datos repetidos
+#distinct on 
 
 select 
 	distinct on (first_name) first_name as nombre ,
@@ -67,6 +76,7 @@ select
 from customer
 order by nombre;
 
+#where selecciona la fila en donde se cumplan las condiciones que se le descendente
 
 select 
 	first_name,
@@ -74,18 +84,21 @@ select
 from customer
 where first_name ='Kelly' and last_name = 'Torres';
 
-
+#in que contenga ('dato1','dato2','dato3')
 select 
 	first_name,
 	last_name
 from customer
 where last_name in('Torres','Brown','Williams')
 
-
+#between ayuda a filtrar los datos que esten entre los parametros
+#and ayuda a filtrar los parametros
 select 
 	*
 from customer
 where customer_id between 10 and 15
+
+#like filtra datos que contenga el parametro dado 'inicia%' '%termina' '%contiene%'
 
 
 select 
