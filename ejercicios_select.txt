@@ -1,0 +1,96 @@
+select
+	first_name as nombre,
+	last_name as apellido
+from 
+	customer
+order by
+	apellido asc;
+
+select
+	first_name as nombre,
+	last_name as apellido
+from 
+	customer
+order by
+	apellido desc;
+
+select
+	first_name as nombre,
+	last_name as apellido
+from 
+	customer
+order by
+	nombre asc,
+	apellido desc;
+
+select
+	first_name as nombre,
+	LENGTH(first_name) as "tamaño nombre",
+	last_name as apellido,
+	LENGTH(last_name) as "tamaño apellido"
+from 
+	customer
+order by
+	"tamaño apellido" asc,
+	apellido desc;
+	
+select
+	last_name,
+	first_name 
+from customer
+where first_name in ('Jamie');
+
+select
+	last_name,
+	first_name 
+from customer
+where
+	first_name in ('Jamie')
+	and last_name in ('Rice');
+
+select 
+	first_name,
+	last_name 
+from 
+	customer
+where 
+	last_name in ('Rodriguez')
+	or first_name in('Adam');
+	
+select 
+	first_name,
+	last_name 
+from 
+	customer
+where
+	first_name like 'Ann'
+	or first_name like 'Anne'
+	or first_name  like 'Annie';
+	
+select 
+	first_name 	
+from 
+	customer
+where
+	first_name like 'Ann%';
+
+select 
+	first_name as nombre,
+	LENGTH(first_name) as longitud
+from 
+	customer
+where 
+	first_name like 'A%'
+	and LENGTH(first_name) between 3 and 5
+order by 
+	longitud asc;
+
+select
+	first_name ,
+	last_name 
+from 
+	customer
+where
+	first_name like 'Bra%'
+	and last_name not in ('Motley')
+
